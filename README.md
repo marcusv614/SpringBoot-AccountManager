@@ -32,7 +32,7 @@ A aplicação permite:
   * Lombok
 * 🐬 **MySQL/MariaDB**
 * 🛠 **Maven**
-* 🎨 **HTML + CSS**
+* 🎨 **HTML + CSS + JS**
 * 🔗 **Thymeleaf**
 
 ---
@@ -41,7 +41,7 @@ A aplicação permite:
 
 ### 🔐 Login
 
-Página de login simples que valida credenciais enviadas pelo formulário.
+Página de login simples que valida username e senha enviadas pelo formulário.
 
 ### 🧾 Cadastro de usuários
 
