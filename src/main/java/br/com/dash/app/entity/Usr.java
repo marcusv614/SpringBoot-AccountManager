@@ -6,17 +6,24 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "usr")
 public class Usr {
+	// Representa a tabela do meu banco de dados
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-	@Column(name = "username", length = 50, nullable = true)
+
+	@NotBlank(message = "O nome é obrigatório!")
+	@Column(name = "username", length = 50, nullable = false)
 	private String username;
-	@Column(name = "pwd", columnDefinition = "TEXT", nullable = true)
+
+	@NotBlank(message = "A senha é obrigatória!")
+	@Column(name = "pwd", columnDefinition = "TEXT", nullable = false)
 	private String pwd;
 
 	public String getUsername() {

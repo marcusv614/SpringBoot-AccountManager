@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head><meta charset="UTF-8"><title>Usuários</title></head>
-<body>
-  <h1>Usuários</h1>
-  <table>
-    <thead><tr><th>ID</th><th>Username</th><th>Senha</th></tr></thead>
-    <tbody>
-      <tr th:each="u : ${usuarios}">
-        <td th:text="${u.id}">1</td>
-        <td th:text="${u.username}">user</td>
-        <td th:text="${u.pwd}">pwd</td>
-      </tr>
-      <tr th:if="${usuarios.isEmpty()}">
-        <td colspan="3">Nenhum usuário encontrado.</td>
-      </tr>
-    </tbody>
-  </table>
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/stylelogin.css" />
+  </head>
+  <body>
+    <div class="containerLogin">
+      <h2>Login</h2>
+
+      <form id="formLogin" method="post" action="/login">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="pwd">Senha</label>
+        <input type="password" id="pwd" name="pwd" required />
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
 </html>
