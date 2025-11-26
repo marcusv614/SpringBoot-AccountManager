@@ -1,9 +1,3 @@
-Claro, Kaz! Aqui está um **README.md profissional, claro, estiloso e com emojis**, ideal para colocar no GitHub para o seu projeto Spring Boot de login, cadastro e listagem de usuários.
-
-Você pode copiar e colar direto no seu repositório.
-
----
-
 # 🌐 Spring Boot Dash Application
 
 Bem-vindo ao **SpringBoot-DashApplication**! 🚀
