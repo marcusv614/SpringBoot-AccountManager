@@ -24,15 +24,32 @@ public class UsrService {
 
 	@Transactional
 	public Usr criarUsr(Usr usr) {
+
+		// verificar se username já existe
+		Optional<Usr> existente = repository.findByUsername(usr.getUsername());
+		if (existente.isPresent()) {
+			// pode lançar exceção ou retornar null, mas exceção é mais correto:
+			throw new RuntimeException("Username já está em uso.");
+		}
+
+		// criptografa senha e salva
 		String encoderSenha = this.passwordEncoder.encode(usr.getPwd());
 		usr.setPwd(encoderSenha);
+
 		return repository.save(usr);
 	}
 
 	@Transactional
 	public Usr alterarUsr(Usr usr) {
+
+		Optional<Usr> existente = repository.findByUsername(usr.getUsername());
+		if (existente.isPresent() && !existente.get().getId().equals(usr.getId())) {
+			throw new RuntimeException("Já existe outro usuário com esse username.");
+		}
+
 		String encoderSenha = this.passwordEncoder.encode(usr.getPwd());
 		usr.setPwd(encoderSenha);
+
 		return repository.save(usr);
 	}
 

@@ -19,7 +19,7 @@ public class Usr {
 	private Integer id;
 
 	@NotBlank(message = "O nome é obrigatório!")
-	@Column(name = "username", length = 50, nullable = false)
+	@Column(name = "username", length = 50, nullable = false, unique = true)
 	private String username;
 
 	@NotBlank(message = "A senha é obrigatória!")
