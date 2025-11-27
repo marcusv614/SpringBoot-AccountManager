@@ -1,4 +1,4 @@
-# 🌐 Spring Boot Dash Application
+# 🌐 Spring Boot Account Manager
 
 Bem-vindo ao **SpringBoot-DashApplication**! 🚀
 Este é um projeto simples, porém completo, desenvolvido para fins de **aprendizado**, **portfólio** e **demonstração prática** de uma aplicação web com **Spring Boot**, **Thymeleaf** e **MySQL**.
