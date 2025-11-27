@@ -22,6 +22,11 @@ public class PageController {
 		this.usrService = usrService;
 	}
 
+	@GetMapping("/")
+	public String home() {
+		return "redirect:/login";
+	}
+
 	@PostMapping("/login")
 	public String loginUsr(@RequestParam("username") String username, @RequestParam("pwd") String pwd,
 			HttpSession session, RedirectAttributes redirectAttrs) {
