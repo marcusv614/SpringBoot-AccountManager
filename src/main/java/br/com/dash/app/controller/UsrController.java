@@ -54,7 +54,7 @@ public class UsrController {
 		return ResponseEntity.status(201).body(usrService.alterarUsr(usr));
 	}
 
-	@DeleteMapping("/usuarios/{id}")
+	@DeleteMapping("{id}")
 	public ResponseEntity<Void> delete(@PathVariable Integer id) {
 		usrService.deleteUsr(id);
 		return ResponseEntity.noContent().build();
