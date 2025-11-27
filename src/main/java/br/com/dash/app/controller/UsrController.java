@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,10 +54,10 @@ public class UsrController {
 		return ResponseEntity.status(201).body(usrService.alterarUsr(usr));
 	}
 
-	@PostMapping("/{id}")
-	public String deletarUsr(@PathVariable Integer id) {
+	@DeleteMapping("/usuarios/{id}")
+	public ResponseEntity<Void> delete(@PathVariable Integer id) {
 		usrService.deleteUsr(id);
-		return "redirect:/usuarios";
+		return ResponseEntity.noContent().build();
 	}
 
 }
